@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <title>LG Social</title>
+    <style>
+      h1 { font-size: 30px; color: #0f24dd; margin-top: 20px; text-align:
+      center; } .nombre, .empresa { font-weight: bold; color: #0f24dd } p {
+      width: 80%; margin: 0 auto; text-align: center; color: black; } .footer {
+      margin-top: 40px; } .contenedor { margin-top: 10px; } a { font-size: 20px;
+      color: #0f24dd; }
+    </style>
+  </head>
+  <body
+    style='
+      text-align: center;
+      width: 80%;
+      margin:0 auto;
+      background-color: #f5f6f8e0;
+      border-radius: 10px;
+      height: 500px;
+      color:black;
+      line-height: 2.5;
+    '
+  >
+    <h1>LG Social</h1>
+    <div class='contenedor'>
+      <p>
+        Hola:
+        <span class='nombre'>{{nombre}}</span>
+        Comprueba tu cuenta en
+        <span class='empresa'>LG Social</span>
+      </p>
+      <p class='cuerpo'>
+        Casi todo está listo para que puedas publicar lo que desees. Solo debes
+        comprobarlo a través del siguiente enlace:
+
+        <a href={{url}}>Comprueba tu cuenta aquí</a>
+
+      </p>
+
+      <p class='cuerpo footer'>
+        Si tu no creaste esta cuenta, puedes ignorar el mensaje
+      </p>
+    </div>
+  </body>
+
+</html>
