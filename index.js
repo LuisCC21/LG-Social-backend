@@ -46,6 +46,7 @@ const io = new Server(servidor, {
   cors: {
     origin: '*',
     allowHeaders: ['Access-Control-Allow-Origin'],
+    credentials: true,
   },
 })
 
