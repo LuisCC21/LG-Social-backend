@@ -90,7 +90,6 @@ const deleteComment = async (req, res) => {
   }
 
   const publicacion = await Publicacion.findById(comentario.publicacion)
-  console.log(publicacion)
   publicacion.comentarios.pull(id)
 
   try {
