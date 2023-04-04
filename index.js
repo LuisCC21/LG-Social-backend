@@ -6,6 +6,7 @@ import userRoutes from './routes/userRoutes.js'
 import postsRoutes from './routes/postsRoutes.js'
 import commentsRoutes from './routes/commentsRoutes.js'
 import { Server } from 'socket.io'
+import { createServer } from 'http'
 
 const app = express()
 
@@ -37,22 +38,15 @@ app.use('/api/users', userRoutes)
 app.use('/api/posts', postsRoutes)
 app.use('/api/comments', commentsRoutes)
 
-app.use((req, res, next) => {
-  res.header(
-    'Access-Control-Allow-Origin',
-    'https://warm-macaron-817d9b.netlify.app'
-  )
-  next()
-})
 const PORT = process.env.PORT || 5000
 
 const servidor = app.listen(PORT, () => {})
 
-const io = new Server(servidor, {
+const httpServer = createServer()
+const io = new Server(httpServer, {
   pingTimeout: 60000,
   cors: {
-    origin: '*',
-    allowHeaders: ['Access-Control-Allow-Origin'],
+    origin: process.env.FRONTEND_URL,
   },
 })
 
@@ -94,3 +88,4 @@ io.on('connection', (socket) => {
     socket.broadcast.emit('disLikes disminuidos', { data, id })
   })
 })
+httpServer.listen(PORT)
