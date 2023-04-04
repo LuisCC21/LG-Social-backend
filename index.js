@@ -5,8 +5,6 @@ import conectarBD from './config/db.js'
 import userRoutes from './routes/userRoutes.js'
 import postsRoutes from './routes/postsRoutes.js'
 import commentsRoutes from './routes/commentsRoutes.js'
-
-// socket io
 import { Server } from 'socket.io'
 
 const app = express()
@@ -46,7 +44,7 @@ const servidor = app.listen(PORT, () => {})
 const io = new Server(servidor, {
   pingTimeout: 60000,
   cors: {
-    origin: process.env.FRONTEND_URL,
+    origin: '*',
   },
 })
 
