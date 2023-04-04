@@ -34,11 +34,6 @@ const corsOptions = {
 
 app.use(cors(corsOptions))
 
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', process.env.FRONTEND_URL)
-  next()
-})
-
 // Routing
 app.use('/api/users', userRoutes)
 app.use('/api/posts', postsRoutes)
