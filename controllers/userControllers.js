@@ -52,7 +52,7 @@ const registerUser = async (req, res) => {
     })
 
     res.json({
-      msg: 'Usuario Creado Correctamente, Revisa tu Email para confirmar tu cuenta',
+      msg: 'Usuario Creado Correctamente, Revisa tu Email para confirmar tu cuenta, si no lo encuentras buscalo en Spam.',
     })
   } catch (error) {
     console.log(error)
